@@ -204,12 +204,12 @@ const WeekView = () => {
     <div className="w-full relative ">
       {/* Header Row */}
       <div
-        className="grid grid-cols-8 sticky top-0 z-30 min-w-[700px] sm:min-w-[900px] mb-2"
-        style={{ backgroundColor: "var(--background)" }}
+        className="grid grid-cols-8 sticky bg-white top-0 z-30 min-w-[700px] sm:min-w-[900px] mb-2"
+        
       >
         <div
-          className="border-r border-b px-2 py-2 text-xs font-medium text-gray-600 sticky left-0 "
-          style={{ backgroundColor: "var(--background)" }}
+          className="border-r border-b px-2 py-2 text-xs bg-white font-medium text-gray-600 sticky left-0 "
+         
         >
           Time
         </div>
@@ -309,8 +309,8 @@ const WeekView = () => {
       <div className="grid grid-cols-8 min-w-[700px] sm:min-w-[900px] relative">
         {/* Time labels */}
         <div
-          className="flex flex-col sticky left-0 z-20"
-          style={{ backgroundColor: "var(--background)" }}
+          className="flex flex-col sticky bg left-0 z-20"
+         
         >
           {hours.map((hour) => (
             <div
@@ -330,8 +330,8 @@ const WeekView = () => {
           return (
             <div
               key={day.toISOString()}
-              className="border-r border-b relative"
-              style={{ backgroundColor: "var(--background)" }}
+              className="border-r border-b relative bg-white"
+              
             >
               {/* Hour grid lines */}
               {hours.map((hour) => (

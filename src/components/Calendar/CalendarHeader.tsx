@@ -192,7 +192,7 @@ const CalendarHeader = () => {
               <DropdownMenuContent
                 align="start"
                 sideOffset={4}
-                className="min-w-[140px] w-auto rounded-md shadow-lg py-1"
+                className="min-w-[140px] w-auto rounded-md bg-white shadow-lg py-1"
               >
                 {VIEWS.map((v) => (
                   <DropdownMenuItem

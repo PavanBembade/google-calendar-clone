@@ -23,7 +23,7 @@ const Calendar = () => {
     <>
       <main role="main" className="w-full h-full flex flex-col overflow-hidden">
         <CalendarHeader />
-        <div className="w-full h-[calc(100vh-100px)] overflow-auto bg-white dark:bg-gray-900 shadow-md rounded-[1.75rem] z-10">
+        <div className="w-full h-[calc(100vh-100px)] overflow-auto bg-white shadow-md rounded-[1.75rem] z-10">
           <div
             className={`transition-opacity duration-300 ${
               fade ? "opacity-100" : "opacity-0"

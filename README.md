@@ -1,69 +1,59 @@
-# React + TypeScript + Vite
+# Google Calendar Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Google Calendar clone built with React, TypeScript, Vite, and Tailwind CSS. This project demonstrates a calendar application with month, week, and day views, event management, and a clean UI inspired by Google Calendar.
 
-Currently, two official plugins are available:
+## 🚀 Setup & Running Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Install dependencies:**
+   
+   npm install
+  
+2. **Start the development server:**
+   
+   npm run dev
+  
+   The app will be available at `http://localhost:5173` (or as indicated in your terminal).
 
-## Expanding the ESLint configuration
+3. **Build for production:**
+  
+   npm run build
+  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+4. **Run tests:**
+   
+   npm test
+  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏗️ Architecture & Design Decisions
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Component Structure:**
+  - The app is split into logical components: `CalendarHeader`, `MonthView`, `WeekView`, `DayView`, `EventFormModal`, and `EventDetailsModal`.
+  - UI primitives (Button, Dialog, Dropdown, etc.) are abstracted in `src/components/ui` for reusability and consistency.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **State Management:**
+  - Uses React Context (`CalendarContext`) to manage global calendar state (current date, view, and events).
+  - Context is provided at the root (`CalendarProvider`), making state accessible throughout the app.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Styling:**
+  - Tailwind CSS is used for rapid, utility-first styling.
+  - Radix UI components are used for accessible dialogs, dropdowns, and popovers.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Date Handling:**
+  - `date-fns` is used for robust date manipulation and formatting.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Testing:**
+  - Jest and React Testing Library are set up for unit and integration tests.
+
+## ⚠️ Known Issues, Limitations & Assumptions
+
+- **Persistence:** Events are not persisted; they reset on page reload (uses in-memory state only).
+- **No authentication or multi-user support.**
+- **No recurring events or reminders.**
+
+## 🌟 Bonus Features Attempted/Completed
+
+- Smooth transitions between views (month/week/day).
+- Modal dialogs for event creation and details, with accessible keyboard navigation.
+- Drag-and-drop and resizing of events are **not** implemented (future work).
+- Clean, modern UI inspired by Google Calendar.
+

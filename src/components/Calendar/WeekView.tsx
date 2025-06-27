@@ -309,7 +309,7 @@ const WeekView = () => {
       <div className="grid grid-cols-8 min-w-[700px] sm:min-w-[900px] relative">
         {/* Time labels */}
         <div
-          className="flex flex-col sticky bg left-0 z-20"
+          className="flex flex-col sticky bg-white left-0 z-20"
          
         >
           {hours.map((hour) => (

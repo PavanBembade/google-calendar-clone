@@ -50,7 +50,7 @@ const MonthView = () => {
     day = addDays(day, 1);
   }
   return (
-    <div className="relative grid grid-cols-7 bg-white dark:bg-gray-800 transition-colors">
+    <div className="relative grid grid-cols-7 bg-white  transition-colors">
       {/* Weekday headers */}
       <div className="hidden md:grid absolute top-2 w-full z-10 grid-cols-7 text-[0.7rem] md:text-xs text-[#444746] font-medium text-center pointer-events-none">
         {WEEKDAYS.map((d, i) => (
@@ -82,7 +82,7 @@ const MonthView = () => {
               ${isSameDay(date, new Date()) ? "" : "border-[#dde3ea]"}
               ${
                 !isSameMonth(date, currentDate)
-                  ? "bg-gray-100 dark:bg-gray-700 text-gray-400 opacity-70"
+                  ? "bg-gray-100 text-gray-400 opacity-70"
                   : ""
               }
               min-h-[80px] sm:min-h-[100px]`}
